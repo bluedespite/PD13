@@ -1,0 +1,16 @@
+version: '3.2'
+services:
+      mydb:
+        image: mariadb
+        restart: always
+        environment:
+          MARIADB_ROOT_PASSWORD: password
+          MARIADB_USER: UCH_NOMBRE
+          MARIADB_PASSWORD: UCH_PASSWD
+          MARIADB_DATABASE: UCH_BBDD
+        volumes:
+          - db-data:/var/lib/mysql
+        ports:
+          - "3306:3306"
+volumes:
+  db-data:
